@@ -35,10 +35,25 @@ function my_keydown(e)
 			document.getElementById("d1").innerHTML = "You pressed Alphabet Key";
 			console.log("alphabet key");
 		}
-	else{
-		otherkey();
-		document.getElementById("d1").innerHTML="You pressed symbol or other key";
-}
+		else if ((keyPressed >= 17 && keyPressed <= 18) || (keyPressed == 27)){
+			specialkey();
+			document.getElementById("d1").innerHTML="You pressed a Special Key";
+			console.log("special key");
+		}
+		else if((keyPressed >=48 && keyPressed<=57)){
+			numberkey();
+			document.getElementById("d1").innerHTML = "You pressed Number Key";
+			console.log("number key");
+		}
+		else if((keyPressed >=37 && keyPressed<=40)){
+			arrowkey();
+			document.getElementById("d1").innerHTML = "You pressed Arrow Key";
+			console.log("arrow key");
+		}
+		else
+			otherkey();
+			document.getElementById("d1").innerHTML = "You pressed Other Key";
+			console.log("other key")
 }
 
 
@@ -49,14 +64,18 @@ function aplhabetkey()
 }
 function numberkey()
 {
-	
+	img_image = "numkey.png";
+	add();
 }
 function arrowkey()
 {
+	img_image = "Arrkey.png";
+	add();
 }
 function specialkey()
 {
-	
+	img_image = "spkey.png";
+	add();
 }
 function otherkey()
 {
